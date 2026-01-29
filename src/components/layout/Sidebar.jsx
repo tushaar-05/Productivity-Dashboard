@@ -1,12 +1,12 @@
 import React from 'react';
-import { Home, CheckSquare, BarChart3, Settings, LogOut } from 'lucide-react';
+import { Home, CheckSquare, BarChart3, Settings, LogOut, SquarePen } from 'lucide-react';
 
-const Sidebar = () => {
-  const [activeLink, setActiveLink] = React.useState('dashboard');
+const Sidebar = ({ activePage, setActivePage }) => {
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: Home },
-    { id: 'manage-tasks', label: 'Manage Tasks', icon: CheckSquare },
+    { id: 'Tasks', label: 'Tasks', icon: CheckSquare },
+    { id: 'manage-task', label: 'Manage Task', icon: SquarePen },
     { id: 'analytics', label: 'Analytics', icon: BarChart3 },
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
@@ -26,12 +26,12 @@ const Sidebar = () => {
       <nav className="flex flex-col gap-3 flex-1">
         {navItems.map((item) => {
           const Icon = item.icon;
-          const isActive = activeLink === item.id;
+          const isActive = activePage === item.id;
 
           return (
             <button
               key={item.id}
-              onClick={() => setActiveLink(item.id)}
+              onClick={() => setActivePage(item.id)}
               className={`
                 flex items-center gap-4 px-6 py-4 rounded-2xl
                 transition-all duration-200 ease-in-out cursor-pointer
