@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Sidebar from './components/layout/Sidebar'
 import Dashboard from './pages/Dashboard'
+import Task from './pages/Tasks'
+import CreateTask from './pages/CreateTask'
 
 function App() {
   const [activePage, setActivePage] = useState('dashboard')
@@ -10,9 +12,7 @@ function App() {
       case 'dashboard':
         return <Dashboard />
       case 'Tasks':
-        return <Tasks />
-      case 'manage-task':
-        return <ManageTask />
+        return <Task />
       default:
         return <Dashboard />
     }

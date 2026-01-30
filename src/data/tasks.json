@@ -1,0 +1,81 @@
+[
+  {
+    "id": 1,
+    "title": "Weekly Team Sync",
+    "description": "Discuss progress and blockers",
+    "priority": "high",
+    "time": {
+      "start": "10:00",
+      "end": "11:00"
+    },
+    "repeat": {
+      "type": "weekly",
+      "days": [
+        "mon",
+        "wed"
+      ]
+    },
+    "completedDates": [],
+    "createdAt": "2026-01-29"
+  },
+  {
+    "id": 2,
+    "title": "Project Proposal Submission",
+    "description": "Send final proposal to client",
+    "priority": "medium",
+    "time": {
+      "start": "14:00",
+      "end": "15:00"
+    },
+    "repeat": {
+      "type": "once",
+      "date": "2026-02-01"
+    },
+    "completedDates": [],
+    "createdAt": "2026-01-29"
+  },
+  {
+    "id": 3,
+    "title": "Daily Code Review",
+    "description": "",
+    "priority": "low",
+    "time": {
+      "start": "17:00",
+      "end": "17:30"
+    },
+    "repeat": {
+      "type": "weekly",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ]
+    },
+    "completedDates": [],
+    "createdAt": "2026-01-29"
+  },
+  {
+    "id": 4,
+    "title": "Daily Code Review",
+    "description": "",
+    "priority": "low",
+    "time": {
+      "start": "17:00",
+      "end": "17:30"
+    },
+    "repeat": {
+      "type": "weekly",
+      "days": [
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri"
+      ]
+    },
+    "completedDates": [],
+    "createdAt": "2026-01-29"
+  }
+]

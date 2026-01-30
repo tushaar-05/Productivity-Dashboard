@@ -1,4 +1,3 @@
-import React from 'react';
 import { Home, CheckSquare, BarChart3, Settings, LogOut, SquarePen } from 'lucide-react';
 
 const Sidebar = ({ activePage, setActivePage }) => {
@@ -6,7 +5,7 @@ const Sidebar = ({ activePage, setActivePage }) => {
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: Home },
     { id: 'Tasks', label: 'Tasks', icon: CheckSquare },
-    { id: 'manage-task', label: 'Manage Task', icon: SquarePen },
+    { id: 'create-task', label: 'Create Task', icon: SquarePen },
     { id: 'analytics', label: 'Analytics', icon: BarChart3 },
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
