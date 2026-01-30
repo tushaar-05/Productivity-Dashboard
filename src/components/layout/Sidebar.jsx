@@ -6,6 +6,7 @@ const Sidebar = ({ activePage, setActivePage }) => {
     { id: 'dashboard', label: 'Dashboard', icon: Home },
     { id: 'Tasks', label: 'Tasks', icon: CheckSquare },
     { id: 'create-task', label: 'Create Task', icon: SquarePen },
+    { id: 'manage-task', label: 'Manage Tasks', icon: SquarePen },
     { id: 'analytics', label: 'Analytics', icon: BarChart3 },
     { id: 'settings', label: 'Settings', icon: Settings },
   ];

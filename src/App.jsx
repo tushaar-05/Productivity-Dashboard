@@ -13,6 +13,8 @@ function App() {
         return <Dashboard />
       case 'Tasks':
         return <Task />
+      case 'create-task': 
+        return <CreateTask />
       default:
         return <Dashboard />
     }
