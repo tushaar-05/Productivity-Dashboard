@@ -3,6 +3,7 @@ import Sidebar from './components/layout/Sidebar'
 import Dashboard from './pages/Dashboard'
 import Task from './pages/Tasks'
 import CreateTask from './pages/CreateTask'
+import ManageTasks from './pages/ManageTasks'
 
 function App() {
   const [activePage, setActivePage] = useState('dashboard')
@@ -15,6 +16,8 @@ function App() {
         return <Task />
       case 'create-task': 
         return <CreateTask />
+      case 'manage-task': 
+        return <ManageTasks />
       default:
         return <Dashboard />
     }

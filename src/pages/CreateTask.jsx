@@ -5,6 +5,8 @@ import tasksData from "../data/tasks.json";
 const ManageTasks = () => {
   // const [tasks, setTasks] = useState(tasksData);
 
+  const today = new Date().toISOString().slice(0, 10);
+
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : tasksData;
@@ -52,7 +54,9 @@ const ManageTasks = () => {
       repeat: {
         type: formState.repeat.type,
         days: formState.repeat.days,
-        date: formState.repeat.date,
+        date: formState.repeat.type === "once"
+          ? formState.repeat.date
+          : today,
       },
       completedDates: [],
       createdAt: new Date().toISOString().slice(0, 10),
@@ -109,10 +113,10 @@ const ManageTasks = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <button
                 type="button"
-                onClick={() => setFormState({ ...formState, priority: "high" })}
-                className={`p-4 rounded-xl border flex items-center justify-center gap-2 font-medium transition-all ${formState.priority === "high" ? "bg-[#ffc6c6] text-slate-900" : "bg-white border-slate-200 text-slate-600"}`}
+                onClick={() => setFormState({ ...formState, priority: "low" })}
+                className={`p-4 rounded-xl border flex items-center justify-center gap-2 font-medium transition-all cursor-pointer ${formState.priority === "low" ? "bg-[#c6ffcf] text-slate-900" : "bg-white border-slate-200 text-slate-600"}`}
               >
-                High Priority
+                Low Priority
               </button>
 
               <button
@@ -120,18 +124,20 @@ const ManageTasks = () => {
                 onClick={() =>
                   setFormState({ ...formState, priority: "medium" })
                 }
-                className={`p-4 rounded-xl border flex items-center justify-center gap-2 font-medium transition-all ${formState.priority === "medium" ? "bg-[#fff6a5] text-slate-900" : "bg-white border-slate-200 text-slate-600"}`}
+                className={`p-4 rounded-xl border flex items-center justify-center gap-2 font-medium transition-all cursor-pointer ${formState.priority === "medium" ? "bg-[#fff6a5] text-slate-900" : "bg-white border-slate-200 text-slate-600"}`}
               >
                 Medium Priority
               </button>
 
               <button
                 type="button"
-                onClick={() => setFormState({ ...formState, priority: "low" })}
-                className={`p-4 rounded-xl border flex items-center justify-center gap-2 font-medium transition-all ${formState.priority === "low" ? "bg-[#c6ffcf] text-slate-900" : "bg-white border-slate-200 text-slate-600"}`}
+                onClick={() => setFormState({ ...formState, priority: "high" })}
+                className={`p-4 rounded-xl border flex items-center justify-center gap-2 font-medium transition-all cursor-pointer ${formState.priority === "high" ? "bg-[#ffc6c6] text-slate-900" : "bg-white border-slate-200 text-slate-600"}`}
               >
-                Low Priority
+                High Priority
               </button>
+
+              
             </div>
           </div>
 
